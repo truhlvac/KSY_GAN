@@ -21,4 +21,6 @@ A simple GUI which produces images based on user input, and showcases the abilit
 Conditional DCGAN model was build following tutorial at this site: https://machinelearningmastery.com/how-to-develop-a-conditional-generative-adversarial-network-from-scratch/ , but partialy altered to be able to work with birds dataset.
 Stage II GAN of the potential StackGAN was influenced by this repository: https://github.com/hanzhanggit/StackGAN
 
+# Example of generated birds
+
 ![Example Image](./birds.png "Sample of generated birds")
