@@ -7,6 +7,8 @@ Also if you want to use our pretrained weights for Stage I generator, you can do
 
 Then it is simple to follow and run each code block in the jupyter notebook to prepare the model and train it. Although the notebook is centered around simple Stage I GAN able to produce 64x64x3 images of 10 bird classes, there is preparation for Stage II GAN, that would output 256x256x3 images of up to 200 bird classes.
 
+![Example Image](./birds.png "Sample of generated birds")
+
 The network structure is build using Tensorflow, specificaly Keras extension. To use it on your computer, you can install tensorflow and other libraries used in this notebook by this command:
 ```
 pip install numpy tensorflow pandas opencv-python tensorflow-gan icecream
