@@ -7,7 +7,6 @@ from generate_image import image_generator
 class ImageGenerationGUI:
     def __init__(self, w=850, h=410):
         self.root = Tk()
-        #print(self.birds_attribute_types)
         self.celebs_attribute_values = [['Yes', 'No'], ['Yes', 'No'], ['Male', 'Female']]
         self.celebs_attribute_types = ['Has eyeglasses', 'Is young', 'Sex']
         self.num_iters = len(self.celebs_attribute_types)
@@ -135,11 +134,11 @@ class ImageGenerationGUI:
             slider_type = 0
         else:
             slider_type = int(slider_type) - 1
-        attr_val = self.birds_attribute_values[slider_type][int(value)]
-        attr_type = self.birds_attribute_types[slider_type]
+        attr_val = self.celebs_attribute_values[slider_type][int(value)]
+        attr_type = self.celebs_attribute_types[slider_type]
         text = f"{attr_type}: {attr_val}"
         label.config(text=text)
-        self.curr_scale_vals[slider_type] = self.birds_attribute_values[slider_type][self.scale_vars[slider_type].get()]
+        self.curr_scale_vals[slider_type] = self.celebs_attribute_values[slider_type][self.scale_vars[slider_type].get()]
 
     def get_image(self):
         selected_class = 0
@@ -157,7 +156,7 @@ class ImageGenerationGUI:
     def generate_image_button_click_handler(self):
         image = self.get_image()
         original_image = Image.fromarray(image.astype('uint8'))
-        resized_image = original_image.resize((300, 300), Image.ANTIALIAS)
+        resized_image = original_image.resize((300, 300))
         photo = ImageTk.PhotoImage(resized_image)
         self.image_label.config(image=photo)
         self.image_label.image = photo 
